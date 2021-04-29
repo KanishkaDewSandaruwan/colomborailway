@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1521" height="375" viewBox="0 0 1521 375">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 125px;
+        fill: #034309;
+      }
+
+      .cls-1 {
+        font-family: Stencil;
+      }
+
+      .cls-2 {
+        font-family: "Myriad Pro";
+      }
+
+      .cls-3 {
+        font-size: 100px;
+        fill: #440303;
+        font-family: "Arial Rounded MT Bold";
+      }
+    </style>
+  </defs>
+  <text id="Colombo_Railway" data-name="Colombo Railway" class="cls-1" transform="translate(270.828 182.243) scale(1.028 1.196)">Colombo Railway</text>
+  <text id="R" class="cls-2" transform="translate(36 303.443) scale(2.9)">R</text>
+  <text id="Department" class="cls-3" transform="translate(761.499 315.211) scale(1.123)">Department</text>
+</svg>
