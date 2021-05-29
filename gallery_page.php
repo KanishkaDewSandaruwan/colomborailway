@@ -17,11 +17,15 @@
                 while ($row3 = mysqli_fetch_assoc($query1)) { 
                 $galaryimage = $row3['galary_image'];
                 $galaryimage_src = "upload/gallery/".$galaryimage; ?>
+
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-location mb-30">
                             <div class="location-img">
                                 <img height="300px" src="<?php echo $galaryimage_src; ?>" alt="">
                             </div>
+                            <div class="text-white" style="position: absolute; margin-top: -80px; margin-left: 5%; color: white">
+                          <h3><a class="text-white" href="#"><?php echo $row3['title']; ?></a></h3>
+                        </div>
                         </div>
                     </div>
                 <?php } ?>

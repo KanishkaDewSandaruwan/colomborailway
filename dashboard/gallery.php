@@ -75,13 +75,14 @@
             </div>
           </div>
           <div class="row">
-              <div class="col-md-6 mt-4">
+              <div class="col-md-12 mt-4">
                         <div class="card">
                             <div class="table-responsive">
                                 <table class="table v-middle">
                                     <thead>
                                         <tr class="bg-dark">
                                             <th class="border-top-0 text-white">Image</th>
+                                            <th class="border-top-0 text-white">Title</th>
                                             <th class="border-top-0 text-white">Action</th>
                                         </tr>
                                     </thead>
@@ -98,6 +99,7 @@
                                         ?>
                                         <tr>
                                             <td><img style="width: 50%; height: auto" src='<?php echo $image_src; ?>'></td>
+                                            <td><?php echo $row['title']; ?></td>
                                             <td><a style="text-decoration: none; color: red; font-size: 20px;" href="delete.php?image_id=<?php echo $row['image_id']; ?>"><i class="fas fa-trash-alt"> Delete</i></a></td>
                                         </tr>
                                         <?php   $count++;  }?>
@@ -123,6 +125,13 @@
                       Select Galary image to upload:<br>
                         <input type="file" name="file" /><br><br>
 
+                        <div class="form-row">
+                          <div class="form-group col-md-12">
+                            <label for="phone"><b>Title</b></label>
+                            <input type="text" class="form-control" name="title" placeholder="Title">
+                          </div>
+                          </div>
+
                   <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
                     <button type="submit" name="submit" class="btn btn-primary">Save changes</button>
@@ -131,6 +140,8 @@
 
                           if(isset($_FILES['file']) && !empty($_FILES['file']['name'])) { 
                                 $file = $_REQUEST['file'];
+
+                                $title = $_REQUEST['title'];
 
                                 $name = $_FILES['file']['name'];
                                 $target_dir = "../upload/gallery/";
@@ -142,7 +153,7 @@
 
                                                 move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 
-                                                $q1="INSERT INTO galary(galary_image) values('$name')";
+                                                $q1="INSERT INTO galary(galary_image,title) values('$name','$title')";
                                                       $res1=mysqli_query($con,$q1);
                                                       if ( $res1)
                                                       {

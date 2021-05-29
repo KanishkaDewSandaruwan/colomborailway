@@ -5,7 +5,7 @@ $home_query = "SELECT * FROM details";
 $home_query_result = mysqli_query($con, $home_query);
 $row = mysqli_fetch_assoc($home_query_result);
 $bottom_banner_01 = $row['header_image'];
-$image_src1 = "upload/details/".$bottom_banner_01; ?>
+$image_src2 = "upload/details/".$bottom_banner_01; ?>
 
 
 <style type="text/css">
@@ -18,7 +18,7 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
     outline: none;
     box-shadow: none;
 }
-.slider-area{background-image:url(<?php echo $image_src1; ?>);background-size:cover;background-repeat:no-repeat}
+.slider-area{background-image:url(<?php echo $image_src2; ?>);background-size:cover;background-repeat:no-repeat}
 </style>
 
     <main>

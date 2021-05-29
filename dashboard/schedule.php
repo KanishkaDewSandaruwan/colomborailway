@@ -184,7 +184,7 @@
 
                     <div class="form-row">
                       <div class="form-group col-md-12">
-                        <label for="inputState"><b>To</b></label>
+                        <label for="inputState"><b>Destination</b></label>
                         <select id="inputState" name="tostation" class="form-control">
                           <option selected></option>';
                          <?php 

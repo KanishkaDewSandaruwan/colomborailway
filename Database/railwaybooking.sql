@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2021 at 07:22 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: May 15, 2021 at 08:14 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`image`, `title`, `description`) VALUES
-('post-06.jpg', 'White Catchers Gift Wall decor', '<p>fgfgf</p>');
+('download (2).jpg', 'White Catchers Gift Wall decor', '<p>fgfgf</p>');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,14 @@ INSERT INTO `booking` (`booking_id`, `sch_id`, `booking_date`, `traveller`, `tot
 (6, 4, '2021-05-01', 2, 700, 'Pending', 'Accept', '2021-04-27 04:19:03', 1),
 (22, 4, '2021-05-01', 3, 1950, 'Pending', 'Pending', '2021-04-28 04:07:38', 1),
 (23, 4, '2021-05-03', 3, 1950, 'Pending', 'Pending', '2021-04-28 04:07:54', 1),
-(24, 4, '2021-05-01', 2, 1300, 'Pending', 'Pending', '2021-04-28 04:07:13', 1);
+(24, 4, '2021-05-01', 2, 1300, 'Pending', 'Pending', '2021-04-28 04:07:13', 1),
+(25, 2, '2021-05-04', 4, 80, 'Pending', 'Pending', '2021-04-30 04:19:34', 1),
+(26, 5, '2021-05-08', 6, 2700, 'Pending', 'Pending', '2021-04-30 04:19:48', 1),
+(27, 5, '2021-05-06', 3, 1050, 'Pending', 'Pending', '2021-04-30 04:19:23', 1),
+(28, 5, '2021-05-05', 4, 1400, 'Pending', 'Pending', '2021-04-30 04:19:08', 1),
+(29, 5, '2021-05-04', 4, 1400, 'Pending', 'Pending', '2021-04-30 04:19:36', 1),
+(30, 2, '2021-05-05', 6, 60, 'Paid', 'Accept', '2021-04-30 04:19:59', 1),
+(31, 4, '2021-05-18', 2, 1300, 'Paid', 'Pending', '2021-05-15 05:08:42', 1);
 
 -- --------------------------------------------------------
 
@@ -145,16 +152,19 @@ INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `feedback`, `accept`, `t
 
 CREATE TABLE `galary` (
   `image_id` int(11) NOT NULL,
-  `galary_image` varchar(255) NOT NULL
+  `galary_image` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `galary`
 --
 
-INSERT INTO `galary` (`image_id`, `galary_image`) VALUES
-(12, '22.jpg'),
-(13, 'dark_bg_img2.png');
+INSERT INTO `galary` (`image_id`, `galary_image`, `title`) VALUES
+(14, 'download (2).jpg', 'Handmade Dream  Catchers  medium Gift Wall deco '),
+(15, 'download.jpg', 'Logitec Keyboard'),
+(16, 'download (2).jpg', 'Prone Rice'),
+(17, 'download (1).jpg', 'White Catchers Gift Wall decor');
 
 -- --------------------------------------------------------
 
@@ -209,7 +219,14 @@ INSERT INTO `seats_calculate` (`seats_calculate_id`, `sch_id`, `book_date`, `one
 (1, 2, '2021-04-29', 8, 0, 3),
 (2, 2, '2021-05-01', 4, 29, 12),
 (13, 4, '2021-05-03', 6, 0, 0),
-(14, 4, '2021-05-01', 4, 0, 0);
+(14, 4, '2021-05-01', 4, 0, 0),
+(15, 2, '2021-05-04', 0, 8, 0),
+(16, 5, '2021-05-08', 12, 0, 0),
+(17, 5, '2021-05-06', 0, 6, 0),
+(18, 5, '2021-05-05', 0, 8, 12),
+(19, 5, '2021-05-04', 0, 8, 0),
+(20, 2, '2021-05-05', 0, 0, 12),
+(21, 4, '2021-05-18', 4, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -420,7 +437,7 @@ ALTER TABLE `user_backup`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -438,7 +455,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `galary`
 --
 ALTER TABLE `galary`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `schedule`
@@ -450,7 +467,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `seats_calculate`
 --
 ALTER TABLE `seats_calculate`
-  MODIFY `seats_calculate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `seats_calculate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `slider_banner`

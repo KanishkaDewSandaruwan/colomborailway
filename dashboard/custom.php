@@ -130,6 +130,9 @@
 
                     Select Sub Pages Header image to upload:<br>
                         <input type="file" name="file1" /><br><br>
+
+                    Select Booking Pages image to upload:<br>
+                        <input type="file" name="file2" /><br><br>
                                 
                   </div>
               <div class="modal-footer">
@@ -142,6 +145,7 @@
  
                       $name = $_FILES['file']['name'];
                       $name1 = $_FILES['file1']['name'];
+                      $name2 = $_FILES['file2']['name'];
 
                       $title = $_REQUEST['title'];
                     $desc = $_REQUEST['desc'];
@@ -151,11 +155,13 @@
                       $target_dir = "../upload/details/";
                       $target_file = $target_dir . basename($_FILES["file"]["name"]);
                       $target_file1 = $target_dir . basename($_FILES["file1"]["name"]);
+                      $target_file2 = $target_dir . basename($_FILES["file2"]["name"]);
 
 
                       // Select file type
                       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                       $imageFileType1 = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
+                      $imageFileType2 = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
                       // Valid file extensions
                       $extensions_arr = array("jpg","jpeg","png","gif");
@@ -168,9 +174,16 @@
                           echo '<script>alert("Header Details Change Success"); window.location.href="custom.php";</script>';
                       }
 
-                      if( in_array($imageFileType1,$extensions_arr) ){
-                          move_uploaded_file($_FILES['file1']['tmp_name'],$target_dir.$name1);
-                          $query="UPDATE details SET subpage_image='$name1'";
+                      if( in_array($imageFileType,$extensions_arr) ){
+                          move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+                          $query="UPDATE details SET header_image='$name'";
+                          mysqli_query($con,$query);
+                          echo '<script>alert("Header Details Change Success"); window.location.href="custom.php";</script>';
+                      }
+
+                      if( in_array($imageFileType2,$extensions_arr) ){
+                          move_uploaded_file($_FILES['file2']['tmp_name'],$target_dir.$name2);
+                          $query="UPDATE details SET book_image='$name2'";
                           mysqli_query($con,$query);
                           echo '<script>alert("Header Details Change Success"); window.location.href="custom.php";</script>';
                       }
@@ -202,7 +215,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title text-danger" id="exampleModalLabel">Change Railway Details</h5>
+                <h5 class="modal-title text-danger" id="exampleModalLabel">Change About Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -239,11 +252,11 @@
                   </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" name="image_set" class="btn btn-primary">Save changes</button>
+                <button type="submit" name="image_set_about" class="btn btn-primary">Save changes</button>
               </div>
                 </form>
                 <?php
-                   if(isset($_POST['image_set'])){
+                   if(isset($_POST['image_set_about'])){
  
                       $name = $_FILES['file']['name'];
 

@@ -70,9 +70,6 @@
                   <h3 class="font-weight-bold">Welcome! Railway Ticket Booking- Colombo Railway Department </h3>
                   <h6 class="font-weight-normal mb-0">All systems are running smoothly! There have <span class="text-primary">All Trains with Details</span></h6>
                 </div>
-                <div class="col-2">
-                  <button class="btn btn-info btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
-                </div>
               </div>
             </div>
           </div>
@@ -126,7 +123,7 @@
    
 
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="button" onclick="window.location.href='train.php'" class="btn btn-dark" data-bs-dismiss="modal">Back</button>
                     <button type="submit" name="submit" class="btn btn-primary">Save changes</button>
                     <?php 
                     if(isset($_POST['submit'])){

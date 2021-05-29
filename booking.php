@@ -4,7 +4,10 @@ $home_query = "SELECT * FROM details";
 $home_query_result = mysqli_query($con, $home_query);
 $row = mysqli_fetch_assoc($home_query_result);
 $bottom_banner_01 = $row['subpage_image'];
-$image_src1 = "upload/details/".$bottom_banner_01; ?>
+$book_image = $row['book_image'];
+$image_src1 = "upload/details/".$bottom_banner_01; 
+$image_src2 = "upload/details/".$book_image; 
+?>
 
 <style type="text/css">
     .hero-area2{background-image:url(<?php echo $image_src1; ?>);
@@ -29,13 +32,11 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
         </div>
         <!--Hero End -->
         <!-- About Details Start -->
-        <?php $viewquery = "SELECT * FROM about";
-              $viewresult = mysqli_query($con,$viewquery);
-              $row5 = mysqli_fetch_assoc($viewresult); 
 
-              $about_image = $row5['image'];
-              $image_src1 = "upload/about/".$about_image;
-              ?>
+              <style type="text/css">
+                .single-visit.left-img::before{position:absolute;left:0;content:"";top:0;bottom:0;background-image:url('<?php echo $image_src2; ?>');width:50%;border-radius:0 5px 0 0;background-size:cover;background-repeat:no-repeat}
+                @media only screen and (min-width: 768px) and (max-width: 991px){.peoples-visit.single-visit.left-img::before{display:none}}@media only screen and (min-width: 576px) and (max-width: 767px){.peoples-visit .single-visit.left-img::before{display:none}}@media (max-width: 575px){.peoples-visit .single-visit.left-img::before{display:none}}
+              </style>
         <!-- peoples-visit Start -->
         <div class="peoples-visit dining-padding-top mt-5">
             <!-- Single Left img -->
@@ -289,8 +290,13 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
                                                                                             $sql3=mysqli_query($con,$query3);
                                                                                       }
 
+                                                                     
+                                                                                    $book_id = "SELECT * FROM booking where sch_id ='$trainsch' AND booking_date ='$bdate' AND user_id ='$user_id' ";
+                                                                                    $book_id_result = mysqli_query($con, $book_id);
+                                                                                    $row = mysqli_fetch_assoc($book_id_result);
 
-                                                                                    echo '<script>alert("Booking Saved is Scussessfully."); window.location.href="myaccount.php";
+
+                                                                                    echo '<script>alert("Booking Saved is Scussessfully."); window.location.href="payment.php?booking_id='.$row['booking_id'].'&total='.$total.'";
                                                                                       </script>'; 
                                                                                 }else{
                                                                                   echo "<script>alert(\"Booking Save is Not Scussess\");</script>";
@@ -323,8 +329,14 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
                                                                                   }
 
 
-                                                                                    echo '<script>alert("Booking Saved is Scussessfully."); window.location.href="myaccount.php";
+                                                                                   $book_id = "SELECT * FROM booking where sch_id ='$trainsch' AND booking_date ='$bdate' AND user_id ='$user_id' ";
+                                                                                    $book_id_result = mysqli_query($con, $book_id);
+                                                                                    $row = mysqli_fetch_assoc($book_id_result);
+
+
+                                                                                    echo '<script>alert("Booking Saved is Scussessfully."); window.location.href="payment.php?booking_id='.$row['booking_id'].'&total='.$total.'";
                                                                                       </script>'; 
+
                                                                                 }else{
                                                                                   echo "<script>alert(\"Booking Save is Not Scussess\");</script>";
                                                                                 } 

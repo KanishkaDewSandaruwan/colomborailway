@@ -48,7 +48,9 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
                                             <th class="border-top-0 text-white">Booking Date</th>
                                             <th class="border-top-0 text-white">Seats</th>
 
+                                            <th class="border-top-0 text-white">Payment</th>
                                             <th class="border-top-0 text-white">Progress</th>
+                                            <th class="border-top-0 text-white">Action</th>
                                         </tr>
                                     </thead>
                                     <?php 
@@ -93,7 +95,18 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
                                                     <td>LKR <?php echo $row['total_amount']; ?></td>
                                                     <td><?php echo $row['booking_date']; ?></td>
                                                     <td><?php echo $row['traveller']; ?></td>
+                                                    <td><?php echo $row['payment']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
+                                                    <td><div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Action
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                          <a class="dropdown-item" href="cancelBooking.php?booking_id=<?php echo $row['booking_id']; ?>"><i class="fas fa-ban"> Cancel Booking</i></a>
+                                                          <a class="dropdown-item" href="payment.php?booking_id=<?php echo $row['booking_id']; ?>&total=<?php echo $row['total_amount']; ?>"><i class="fas fa-credit-card"> Pay</i></a>
+                                                        </div>
+                                                      </div>
+                                                    </td>
                                                 </tr>
                                             <?php   $count++;   }?>
                                     </tbody>

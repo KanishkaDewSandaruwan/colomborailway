@@ -47,12 +47,12 @@ session_start();?>
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <!-- Logo -->
-                            <div class="col-xl-5 col-lg-2 col-md-1">
+                            <div class="col-xl-4 col-lg-2 col-md-1">
                                 <div class="logo">
-                                  <a style="font-size: 35px; font-family: 'Times New Roman', Times, serif;" href="index.php"><h2 style="color: white">Welcome! Colombo Railway Department</h2> <h5 style="color: white"> Ticket Booking System</h5></a>
-                                </div>
+                                  <a style="font-size: 10px; font-family: 'Times New Roman', Times, serif;" href="index.php"><h4 style="color: white">Welcome! Colombo Railway Department</h4> <h5 style="color: white"> Ticket Booking System</h5></a>
+                                </div>  
                             </div>
-                            <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="col-xl-8 col-lg-7 col-md-8">
                                 <!-- Main-menu -->
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
@@ -63,17 +63,17 @@ session_start();?>
                                             <li class="add-list"><a href="booking.php"><i class="ti-plus"></i>Booking</a></li>
                                             <?php if (isset($_SESSION['user_id'])) { ?>
                                             <li class="login"><a href="myaccount.php">
-                                                <i style="font-size: 20px" class="fas fa-user"> My Account </i></a>
+                                                <i style="font-size: 15px" class="fas fa-user"> My Account </i></a>
                                             </li>
                                             <li class="login"><a href="logout.php">
-                                                <i style="font-size: 20px" class="fas fa-sign-out-alt"> Logout</i></a>
+                                                <i style="font-size: 15px" class="fas fa-sign-out-alt"> Logout</i></a>
                                             </li>
                                             <?php }else{ ?>
                                             <li class="login"><a href="auth/login.php">
-                                                <i style="font-size: 20px" class="fas fa-user">  Sign in </i></a>
+                                                <i style="font-size: 15px" class="fas fa-user">  Sign in </i></a>
                                             </li>
                                             <li class="login"><a href="auth/register.php">
-                                                <i style="font-size: 20px" class="fas fa-user-plus"> Sign Up</i></a>
+                                                <i style="font-size: 15px" class="fas fa-user-plus"> Sign Up</i></a>
                                             </li>
                                         <?php } ?>
 

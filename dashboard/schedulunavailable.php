@@ -69,14 +69,11 @@
                   <h3 class="font-weight-bold mt-3">Welcome! Railway Ticket Booking- Colombo Railway Department </h3>
                   <h6 class="font-weight-normal mb-0">All systems are running smoothly! There have <span class="text-primary">Schedules Details to Change</span></h6>
                 </div>
-                <div class="col-2">
-                  <button class="btn btn-info btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New</button>
-                </div>
               </div>
             </div>
           </div>
           <div class="row">
-              <div class="col-md-6 mt-4" style="font-family: \"Times New Roman\",Times, serif;">
+              <div class="col-md-12 mt-4" style="font-family: \"Times New Roman\",Times, serif;">
                        <form class="reg_form bg-light p-4 border rounded" action="" method="POST" enctype="multipart/form-data">
 
                     <div class="form-row">
@@ -133,7 +130,8 @@
                                         </tr>
                                     </thead>
                                     <?php $count=1;
-                                      $getsch = "SELECT * FROM unavailable";
+                                    $id = $_REQUEST['sch_id'];
+                                      $getsch = "SELECT * FROM unavailable where sch_id = '$id'";
                                       $viewresult = mysqli_query($con, $getsch);
                                         
                                       ?>

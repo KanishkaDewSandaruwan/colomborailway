@@ -105,7 +105,7 @@
                                                   Action
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                  <a class="dropdown-item" href="delete.php?train_id=<?php echo $row['train_id']; ?>"><i class="fas fa-trash-alt"> Delete</i></a>
+                                                  <a class="dropdown-item" href="delete.php?user_id=<?php echo $row['user_id']; ?>"><i class="fas fa-trash-alt"> Delete</i></a>
                                                 </div>
                                               </div>
                                             </td>

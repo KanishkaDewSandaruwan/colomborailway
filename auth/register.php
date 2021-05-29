@@ -88,61 +88,61 @@
 
                     if (empty($name)) {
 
-                      echo "<script>alert(\"Plese Enter Your Name.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Your Name.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($email)) {
                       
-                      echo "<script>alert(\"Plese Enter Your Email.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Your Email.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($address)) {
                       
-                      echo "<script>alert(\"Plese Enter Your address.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Your address.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($phone)) {
                       
-                      echo "<script>alert(\"Plese Enter Your Phone Number.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Your Phone Number.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($nic)) {
                       
-                      echo "<script>alert(\"Plese Enter Your NIC Number.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Your NIC Number.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($psaaword)) {
                       
-                      echo "<script>alert(\"Plese Enter New Password.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter New Password.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (empty($conpw)) {
                       
-                      echo "<script>alert(\"Plese confirm Your Password.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese confirm Your Password.\");window.location.href=\"register.php\";</script>";
                     
                     }
                     elseif (!preg_match("/^([0]([0-9])([0-9])([0-9])([0-9])([0-9])([0-9])([0-9])([0-9])([0-9]))$/", $phone)) {
 
-                      echo "<script>alert(\"Plese Enter Valid Phone Number.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Plese Enter Valid Phone Number.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif ($psaaword!=$conpw) {
                       
-                      echo "<script>alert(\"Password is Not Match.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Password is Not Match.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (mysqli_num_rows($sql2)>0) {
                     
-                      echo "<script>alert(\"Email already Exsisted.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Email already Exsisted.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     elseif (mysqli_num_rows($sql3)>0) {
                       
-                      echo "<script>alert(\"Phone Number already Exsisted.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"Phone Number already Exsisted.\");window.location.href=\"register.php\";</script>";
                     }
                     elseif (mysqli_num_rows($sql4)>0) {
                     
-                      echo "<script>alert(\"NIC Number already Exsisted.\");window.location.href=\"index.php\";</script>";
+                      echo "<script>alert(\"NIC Number already Exsisted.\");window.location.href=\"register.php\";</script>";
                       
                     }
                     else {

@@ -85,6 +85,7 @@
                                             <th class="border-top-0 text-white">Arrive Station</th>
                                             <th class="border-top-0 text-white">Arrive Time</th>
                                             <th class="border-top-0 text-white">Amount</th>
+                                            <th class="border-top-0 text-white">Payment</th>
                                             <th class="border-top-0 text-white">Booking Date</th>
                                             <th class="border-top-0 text-white">Seats</th>
 
@@ -139,6 +140,7 @@
                                                     <td><?php echo $row4['Station_name']; ?></td>
                                                     <td><?php echo $row1['arrive_time']; ?></td>
                                                     <td>LKR <?php echo $row['total_amount']; ?></td>
+                                                    <td><?php echo $row['payment']; ?></td>
                                                     <td><?php echo $row['booking_date']; ?></td>
                                                     <td><?php echo $row['traveller']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
