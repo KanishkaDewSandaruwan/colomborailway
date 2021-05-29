@@ -94,7 +94,6 @@
                                     </thead>
                                     <?php 
                                       $count=1;
-                                      $id = $_SESSION['user_id'];
                                         $viewquery = " SELECT * FROM booking order by trndate desc";
                                         $viewresult = mysqli_query($con,$viewquery);
                                     

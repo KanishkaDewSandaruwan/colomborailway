@@ -174,9 +174,9 @@
                           echo '<script>alert("Header Details Change Success"); window.location.href="custom.php";</script>';
                       }
 
-                      if( in_array($imageFileType,$extensions_arr) ){
-                          move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
-                          $query="UPDATE details SET header_image='$name'";
+                      if( in_array($imageFileType1,$extensions_arr) ){
+                          move_uploaded_file($_FILES['file1']['tmp_name'],$target_dir.$name1);
+                          $query="UPDATE details SET subpage_image='$name1'";
                           mysqli_query($con,$query);
                           echo '<script>alert("Header Details Change Success"); window.location.href="custom.php";</script>';
                       }
