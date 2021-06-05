@@ -39,7 +39,10 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
 
               <style type="text/css">
                 .single-visit.left-img::before{position:absolute;left:0;content:"";top:0;bottom:0;background-image:url('<?php echo $image_src2; ?>');width:50%;border-radius:0 5px 0 0;background-size:cover;background-repeat:no-repeat}
-                @media only screen and (min-width: 768px) and (max-width: 991px){.peoples-visit.single-visit.left-img::before{display:none}}@media only screen and (min-width: 576px) and (max-width: 767px){.peoples-visit .single-visit.left-img::before{display:none}}@media (max-width: 575px){.peoples-visit .single-visit.left-img::before{display:none}}
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    .peoples-visit.single-visit.left-img::before{display:none}}
+                    @media only screen and (min-width: 576px) and (max-width: 767px){.peoples-visit .single-visit.left-img::before{display:none}}
+                    @media (max-width: 575px){.peoples-visit .single-visit.left-img::before{display:none}}
               </style>
         <!-- peoples-visit Start -->
 
@@ -51,25 +54,18 @@ $image_src1 = "upload/details/".$bottom_banner_01; ?>
               $image_src2 = "upload/home/".$about_image;
               ?>
 
-              <style type="text/css">
-                .single-visit.left-img::before{position:absolute;left:0;content:"";top:0;bottom:0;background-image:url('<?php echo $image_src2; ?>');width:50%;border-radius:0 5px 0 0;background-size:cover;background-repeat:no-repeat}
-                @media only screen and (min-width: 768px) and (max-width: 991px){.peoples-visit.single-visit.left-img::before{display:none}}@media only screen and (min-width: 576px) and (max-width: 767px){.peoples-visit .single-visit.left-img::before{display:none}}@media (max-width: 575px){.peoples-visit .single-visit.left-img::before{display:none}}
-              </style>
         <!-- peoples-visit Start -->
         <div class="peoples-visit dining-padding-top mt-5">
             <!-- Single Left img -->
-            <div class="single-visit left-img">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="col-lg-8 bg-white p-5">
-                            <div class="visit-caption">
-                                <span>We are offering for you</span>
-                                <h3><?php echo $row5['title']; ?></h3>
-                                <p><?php echo $row5['description']; ?></p>
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="row p-5">
+                <h1 style="font-weight: bold;"><?php echo $row5['title']; ?></h1>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-5">
+                    <img style="width: 100%; border-radius: 25px" src="<?php echo $image_src2; ?>">
+                </div>
+                <div class="col-md-6" style="border : 2px solid gray; padding: 3%; border-radius: 30px">
+                    <p><?php echo $row5['description']; ?></p>
                 </div>
             </div>
         </div>
